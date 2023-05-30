@@ -32,7 +32,6 @@ target_include_directories(imgui PUBLIC
     $<INSTALL_INTERFACE:include>)
 
 target_link_libraries(imgui PUBLIC glfw OpenGL::GL GLEW::GLEW)
-target_compile_definitions(imgui PUBLIC IMGUI_DISABLE_INCLUDE_IMCONFIG_H)
 ament_export_targets(export_imgui HAS_LIBRARY_TARGET)
 
 add_executable(imgui_example src/main.cpp)
@@ -44,6 +43,7 @@ ament_export_dependencies(glfw3 OpenGL GLEW)
 
 install(FILES
   imgui/imgui.h
+  imgui/imconfig.h
   imgui/imgui_internal.h
   imgui/imstb_textedit.h
   imgui/backends/imgui_impl_opengl3.h
